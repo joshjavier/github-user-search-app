@@ -10,7 +10,11 @@
 </head>
 <body>
 
-  <%= title %>
+  <% if (locals.error) { %>
+    <%= error %>
+  <% } else { %>
+    <%= user %>
+  <% } %>
 
   Light
   Dark
