@@ -25,4 +25,8 @@
 
   /* Typography */
   --font-mono: 'Space Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* Custom fluid tokens */
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,24—98 */
+  --fluid-24-98: clamp(1.5rem, -2.9132rem + 18.8295vw, 6.125rem);
 }

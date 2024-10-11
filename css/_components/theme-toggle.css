@@ -1,0 +1,23 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  --color-text: var(--color-queen-blue);
+
+  &:hover {
+    --color-text: var(--color-charleston-green);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --color-text: #fff;
+
+    &:hover {
+      --color-text: #90A4D4;
+    }
+  }
+}

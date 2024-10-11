@@ -9,24 +9,35 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <%- include('partials/icons.ejs') %>
 
-  <% if (locals.error) { %>
-    <%= error %>
-  <% } else { %>
-    <%= user %>
-  <% } %>
+  <article class="center">
+    <header>
+      <h1 class="logo">devfinder</h1>
 
-  Light
-  Dark
+      <button class="theme-toggle">
+        Dark
+        <svg class="icon"><use href="#icon-moon" /></svg>
+      </button>
+    </header>
 
-  Search GitHub username...
-  Search
+    <main>
+      <% if (locals.error) { %>
+        <%= error %>
+      <% } else { %>
+        <%= user %>
+      <% } %>
 
-  Joined
+      Search GitHub username...
+      Search
 
-  Repos
-  Followers
-  Following
+      Joined
+
+      Repos
+      Followers
+      Following
+    </main>
+  </article>
 
 </body>
 </html>

@@ -3,7 +3,19 @@
 @import 'fonts.css';
 
 body {
+  margin: 0;
   font-family: var(--font-mono);
   background-color: var(--color-sheet);
   color: var(--color-text);
+
+  display: grid;
+  place-items: center;
+  --wrapper-max-width: 730px;
+  --wrapper-gutter: var(--fluid-24-98);
+}
+
+button {
+  border: 1px solid transparent;
+  color: var(--color-text);
+  cursor: pointer;
 }

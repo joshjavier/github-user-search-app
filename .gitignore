@@ -17,3 +17,6 @@
 
 # Dependencies
 node_modules
+
+# Secrets
+*.local

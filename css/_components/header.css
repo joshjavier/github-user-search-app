@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  & .logo {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 0;
+  }
+}
