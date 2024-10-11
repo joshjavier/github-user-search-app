@@ -29,4 +29,16 @@
   /* Custom fluid tokens */
   /* @link https://utopia.fyi/clamp/calculator?a=375,768,24—98 */
   --fluid-24-98: clamp(1.5rem, -2.9132rem + 18.8295vw, 6.125rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,60—69 */
+  --fluid-60-69: clamp(3.75rem, 3.2133rem + 2.2901vw, 4.3125rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,13—18 */
+  --fluid-13-18: clamp(0.8125rem, 0.5143rem + 1.2723vw, 1.125rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,14—16 */
+  --fluid-14-16: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,7—10 */
+  --fluid-7-10: clamp(0.4375rem, 0.2586rem + 0.7634vw, 0.625rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,16—32 */
+  --fluid-16-32: clamp(1rem, 0.0458rem + 4.0712vw, 2rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,20—24 */
+  --fluid-20-24: clamp(1.25rem, 1.0115rem + 1.0178vw, 1.5rem);
 }

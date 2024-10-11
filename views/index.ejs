@@ -11,17 +11,25 @@
 <body>
   <%- include('partials/icons.ejs') %>
 
-  <article class="center">
-    <header>
+  <main class="center">
+    <div class="app-header">
       <h1 class="logo">devfinder</h1>
 
       <button class="theme-toggle">
         Dark
         <svg class="icon"><use href="#icon-moon" /></svg>
       </button>
-    </header>
+    </div>
 
-    <main>
+    <search class="search-bar">
+      <svg class="icon"><use href="#icon-search" /></svg>
+      <form>
+        <input type="search" name="q" placeholder="Search GitHub username…">
+        <button type="submit">Search</button>
+      </form>
+    </search>
+
+    <div>
       <% if (locals.error) { %>
         <%= error %>
       <% } else { %>
@@ -36,8 +44,8 @@
       Repos
       Followers
       Following
-    </main>
-  </article>
+    </div>
+  </main>
 
 </body>
 </html>
