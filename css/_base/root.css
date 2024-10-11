@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --color-azure: #0079FF;
+  --color-slate-gray: #697C9A;
+  --color-queen-blue: #4B6A9B;
+  --color-gunmetal: #2B3442;
+  --color-charleston-green: #222731;
+  --color-ghost-white: #F6F8FF;
+  --color-white: #FEFEFE;
+  --color-dark-gunmetal: #141D2F;
+  --color-yankees-blue: #1E2A47;
+  --color-tart-orange: #F74646;
+
+  /* Light Mode */
+  --color-sheet: var(--color-ghost-white);
+  --color-text: var(--color-charleston-green);
+  --color-error: var(--color-tart-orange);
+  --color-primary: var(--color-azure);
+
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    --color-sheet: var(--color-dark-gunmetal);
+    --color-text: #fff;
+  }
+
+  /* Typography */
+  --font-mono: 'Space Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
