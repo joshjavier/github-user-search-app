@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "turbowatch ./turbowatch.ts",
+    "build": "lightningcss --bundle --browserslist css/main.css -o public/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +16,15 @@
     "axios": "^1.7.7",
     "ejs": "^3.1.10",
     "express": "^5.0.1"
-  }
+  },
+  "devDependencies": {
+    "browserslist": "^4.24.0",
+    "lightningcss-cli": "^1.27.0",
+    "turbowatch": "^2.29.4"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
+  ]
 }
