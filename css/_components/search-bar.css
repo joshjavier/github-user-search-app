@@ -33,6 +33,10 @@
       opacity: 1;
     }
 
+    @media (prefers-color-scheme: light) {
+      box-shadow: var(--card-shadow);
+    }
+
     @media (prefers-color-scheme: dark) {
       --color-sheet: var(--color-yankees-blue);
 

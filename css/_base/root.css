@@ -11,6 +11,8 @@
   --color-yankees-blue: #1E2A47;
   --color-tart-orange: #F74646;
 
+  --card-shadow: 0 16px 30px -10px hsl(227 46% 51% / 19.86%);
+
   /* Light Mode */
   --color-sheet: var(--color-ghost-white);
   --color-text: var(--color-charleston-green);
