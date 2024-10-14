@@ -29,7 +29,24 @@
       </form>
     </search>
 
-    <div>
+    <article class="card">
+      <ul class="stats">
+        <li class="stat">
+          <span class="title">Repos</span>
+          <span class="value">8</span>
+        </li>
+        <li class="stat">
+          <span class="title">Followers</span>
+          <span class="value">3938</span>
+        </li>
+        <li class="stat">
+          <span class="title">Following</span>
+          <span class="value">9</span>
+        </li>
+      </ul>
+    </article>
+
+    <div  style="display: none;">
       <% if (locals.error) { %>
         <%= error %>
       <% } else { %>

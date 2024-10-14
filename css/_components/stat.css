@@ -1,0 +1,33 @@
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fluid-8-1);
+
+  > .title {
+    font-size: var(--fluid-11-13);
+  }
+
+  > .value {
+    font-size: var(--fluid-16-22);
+    font-weight: 700;
+  }
+}
+
+.stats {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin-block: 0;
+  padding: 18px var(--fluid-14-32);
+  border-radius: 10px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-sheet);
+  }
+}
+
+@media (max-width: 400px) {
+  .stats { justify-items: center; }
+  .stat { align-items: center; }
+}

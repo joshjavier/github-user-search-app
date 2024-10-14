@@ -1,0 +1,13 @@
+.card {
+  border-radius: 15px;
+  background-color: var(--color-white);
+  padding: var(--fluid-32-40) var(--fluid-24-40);
+
+  @media (prefers-color-scheme: light) {
+    box-shadow: var(--card-shadow);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-yankees-blue);
+  }
+}
