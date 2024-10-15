@@ -11,3 +11,57 @@
     background-color: var(--color-yankees-blue);
   }
 }
+
+.user.card {
+  & .profile {
+    display: flex;
+    gap: var(--fluid-20-40);
+    align-items: center;
+
+    > .text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--fluid-0-2);
+    }
+  }
+
+  & .avatar {
+    flex-shrink: 0;
+    width: var(--fluid-70-117);
+    height: var(--fluid-70-117);
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 999em;
+    }
+  }
+
+  & .name {
+    font-size: var(--fluid-16-26);
+    font-weight: 700;
+    margin-top: 0;
+  }
+
+  & .username {
+    font-size: var(--fluid-13-16);
+    text-decoration: none;
+    color: var(--color-azure);
+  }
+
+  & .joined {
+    font-size: var(--fluid-13-15);
+    margin-top: 0;
+  }
+
+  & .bio {
+    font-size: var(--fluid-13-15);
+    line-height: 25px;
+    margin-block: var(--fluid-33-24) var(--fluid-22-32);
+
+    @media (prefers-color-scheme: light) {
+      color: var(--color-queen-blue);
+    }
+  }
+}

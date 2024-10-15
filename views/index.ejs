@@ -11,56 +11,87 @@
 <body>
   <%- include('partials/icons.ejs') %>
 
-  <main class="center">
-    <div class="app-header">
-      <h1 class="logo">devfinder</h1>
+  <main>
+    <div class="center">
+      <div class="app-header">
+        <h1 class="logo">devfinder</h1>
 
-      <button class="theme-toggle">
-        Dark
-        <svg class="icon"><use href="#icon-moon" /></svg>
-      </button>
-    </div>
+        <button class="theme-toggle">
+          Dark
+          <svg class="icon" aria-hidden="true"><use href="#icon-moon" /></svg>
+        </button>
+      </div>
 
-    <search class="search-bar">
-      <svg class="icon"><use href="#icon-search" /></svg>
-      <form>
-        <input type="search" name="q" placeholder="Search GitHub username…">
-        <button type="submit">Search</button>
-      </form>
-    </search>
+      <search class="search-bar">
+        <svg class="icon" aria-hidden="true"><use href="#icon-search" /></svg>
+        <form>
+          <input type="search" name="q" placeholder="Search GitHub username…">
+          <button type="submit">Search</button>
+        </form>
+      </search>
 
-    <article class="card">
-      <ul class="stats">
-        <li class="stat">
-          <span class="title">Repos</span>
-          <span class="value">8</span>
-        </li>
-        <li class="stat">
-          <span class="title">Followers</span>
-          <span class="value">3938</span>
-        </li>
-        <li class="stat">
-          <span class="title">Following</span>
-          <span class="value">9</span>
-        </li>
-      </ul>
-    </article>
+      <article class="card user">
+        <div class="profile">
+          <div class="avatar">
+            <img src="<%= user.avatar %>" alt="">
+          </div>
+          <div class="text">
+            <h2 class="name"><%= user.name %></h2>
+            <a class="username" href="<%= user.profile %>"><%= user.username %></a>
+            <p class="joined">Joined <%= user.dateJoined %></p>
+          </div>
+        </div>
 
-    <div  style="display: none;">
-      <% if (locals.error) { %>
-        <%= error %>
-      <% } else { %>
-        <%= user %>
-      <% } %>
+        <p class="bio <%= !user.bio && 'opacity-50' %>"><%= user.bio ?? 'This profile has no bio' %></p>
 
-      Search GitHub username...
-      Search
+        <h2 class="visually-hidden">User Stats</h2>
+        <ul class="stats">
+          <li class="stat">
+            <span class="title">Repos</span>
+            <span class="value">8</span>
+          </li>
+          <li class="stat">
+            <span class="title">Followers</span>
+            <span class="value">3938</span>
+          </li>
+          <li class="stat">
+            <span class="title">Following</span>
+            <span class="value">9</span>
+          </li>
+        </ul>
 
-      Joined
+        <h2 class="visually-hidden">Other Info</h2>
+        <ul class="lines">
+          <li class="infoline">
+            <svg class="icon" aria-hidden="true"><use href="#icon-pin" /></svg>
+            <span class="visually-hidden">Location:</span>
+            <span>San Francisco</span>
+          </li>
+          <li class="infoline">
+            <svg class="icon" aria-hidden="true"><use href="#icon-url" /></svg>
+            <span class="visually-hidden">Blog:</span>
+            <a href="#">https://github.blog</a>
+          </li>
+          <li class="infoline opacity-50">
+            <svg class="icon" aria-hidden="true"><use href="#icon-twitter" /></svg>
+            <span class="visually-hidden">Twitter:</span>
+            <span>Not Available</span>
+          </li>
+          <li class="infoline">
+            <svg class="icon" aria-hidden="true"><use href="#icon-office" /></svg>
+            <span class="visually-hidden">Company:</span>
+            <span>@github</span>
+          </li>
+        </ul>
+      </article>
 
-      Repos
-      Followers
-      Following
+      <div style="display: none;">
+        <% if (locals.error) { %>
+          <%= error %>
+        <% } else { %>
+          <%= user %>
+        <% } %>
+      </div>
     </div>
   </main>
 
