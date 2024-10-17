@@ -26,11 +26,8 @@
   gap: 1rem;
   grid-template-rows: 1fr 1fr;
 
-  @media (min-width: 375px) {
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  }
-
-  @media (min-width: 739px) {
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
     grid-auto-flow: column;
   }
 }
