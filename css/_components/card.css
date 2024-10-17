@@ -48,6 +48,10 @@
     font-size: var(--fluid-13-16);
     text-decoration: none;
     color: var(--color-azure);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & .joined {

@@ -37,7 +37,7 @@
           </div>
           <div class="text">
             <h2 class="name"><%= user.name %></h2>
-            <a class="username" href="<%= user.profile %>"><%= user.username %></a>
+            <a class="username" href="<%= user.profile %>" target="_blank" rel="noopener"><%= user.username %></a>
             <p class="joined">Joined <%= user.dateJoined %></p>
           </div>
         </div>
@@ -48,50 +48,63 @@
         <ul class="stats">
           <li class="stat">
             <span class="title">Repos</span>
-            <span class="value">8</span>
+            <span class="value"><%= user.repos %></span>
           </li>
           <li class="stat">
             <span class="title">Followers</span>
-            <span class="value">3938</span>
+            <span class="value"><%= user.followers %></span>
           </li>
           <li class="stat">
             <span class="title">Following</span>
-            <span class="value">9</span>
+            <span class="value"><%= user.following %></span>
           </li>
         </ul>
 
         <h2 class="visually-hidden">Other Info</h2>
         <ul class="lines">
-          <li class="infoline">
+
+          <!-- Location -->
+          <li class="infoline <%= !user.location && 'opacity-50' %>">
             <svg class="icon" aria-hidden="true"><use href="#icon-pin" /></svg>
             <span class="visually-hidden">Location:</span>
-            <span>San Francisco</span>
+            <span><%= user.location ?? 'Not Available' %></span>
           </li>
-          <li class="infoline">
+
+          <!-- Blog -->
+          <li class="infoline <%= !user.blog && 'opacity-50' %>">
             <svg class="icon" aria-hidden="true"><use href="#icon-url" /></svg>
             <span class="visually-hidden">Blog:</span>
-            <a href="#">https://github.blog</a>
+            <% if (user.blog) { %>
+              <a href="<%= user.blog %>" target="_blank" rel="noopener"><%= user.blog %></a>
+            <% } else { %>
+              <span>Not Available</span>
+            <% } %>
           </li>
-          <li class="infoline opacity-50">
+
+          <!-- Twitter -->
+          <li class="infoline <%= !user.twitter && 'opacity-50' %>">
             <svg class="icon" aria-hidden="true"><use href="#icon-twitter" /></svg>
             <span class="visually-hidden">Twitter:</span>
-            <span>Not Available</span>
+            <% if (user.twitter) { %>
+              <a href="https://twitter.com/<%= user.twitter %>" target="_blank" rel="noopener">@<%= user.twitter %></a>
+            <% } else { %>
+              <span>Not Available</span>
+            <% } %>
           </li>
-          <li class="infoline">
+
+          <!-- Company -->
+          <li class="infoline <%= !user.company && 'opacity-50' %>">
             <svg class="icon" aria-hidden="true"><use href="#icon-office" /></svg>
             <span class="visually-hidden">Company:</span>
-            <span>@github</span>
+            <% if (user.company) { %>
+              <a href="https://github.com/<%= user.company.slice(1) %>" target="_blank" rel="noopener"><%= user.company %></a>
+            <% } else { %>
+              <span>Not Available</span>
+            <% } %>
           </li>
+
         </ul>
       </article>
-
-      <div style="display: none;">
-        <% if (locals.error) { %>
-          <%= error %>
-        <% } else { %>
-          <%= user %>
-        <% } %>
-      </div>
     </div>
   </main>
 
