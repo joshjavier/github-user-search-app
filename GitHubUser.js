@@ -8,7 +8,7 @@ class GitHubUser {
       return new GitHubUser(response.data)
     } catch (error) {
       if (error.response.status === 404) {
-        return new GitHubUser()
+        return null
       } else {
         throw error
       }

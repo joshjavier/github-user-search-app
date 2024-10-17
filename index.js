@@ -8,22 +8,21 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', async (req, res) => {
-  try {
-    const user = await GitHubUser.fetch('octocat')
-    res.render('index', { user: JSON.stringify(user.info) })
-  } catch (error) {
-    console.log(error)
-    res.sendStatus(500)
-  }
-})
+  const { username } = req.query
 
-app.get('/:username', async (req, res) => {
   try {
-    const user = await GitHubUser.fetch(req.params.username)
-    if (user.exists) {
-      res.render('index', { user: JSON.stringify(user.info) })
+    const user = await GitHubUser.fetch(username || 'octocat')
+
+    if (user) {
+      res.render('index', {
+        user: user.info,
+        query: { username: username?.toString() }
+      })
     } else {
-      res.render('index', { error: 'No matching users.' })
+      res.render('index', {
+        error: 'No matching users.',
+        query: { username: username?.toString() }
+      })
     }
   } catch (error) {
     console.log(error)

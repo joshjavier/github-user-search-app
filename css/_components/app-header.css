@@ -8,5 +8,7 @@
     font-weight: 700;
     line-height: normal;
     margin-top: 0;
+
+    & a { text-decoration: none; }
   }
 }

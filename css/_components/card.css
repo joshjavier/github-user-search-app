@@ -12,6 +12,11 @@
   }
 }
 
+.error.card {
+  text-align: center;
+  > * { margin-block: 1rem; }
+}
+
 .user.card {
   & .profile {
     display: flex;
