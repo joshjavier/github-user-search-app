@@ -6,7 +6,13 @@
   > .title {
     font-size: var(--fluid-11-13);
 
-    @media (prefers-color-scheme: light) {
+    @nest html:not([data-theme]) & {
+      @media (prefers-color-scheme: light) {
+        color: var(--color-queen-blue);
+      }
+    }
+
+    @nest [data-theme="light"] & {
       color: var(--color-queen-blue);
     }
   }
@@ -26,7 +32,13 @@
   padding: 18px var(--fluid-14-32);
   border-radius: 10px;
 
-  @media (prefers-color-scheme: dark) {
+  @nest html:not([data-theme]) & {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-sheet);
+    }
+  }
+
+  @nest [data-theme="dark"] & {
     background-color: var(--color-sheet);
   }
 }

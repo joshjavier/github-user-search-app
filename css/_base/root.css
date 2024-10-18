@@ -13,17 +13,28 @@
 
   --card-shadow: 0 16px 30px -10px hsl(227 46% 51% / 19.86%);
 
-  /* Light Mode */
-  --color-sheet: var(--color-ghost-white);
-  --color-text: var(--color-charleston-green);
   --color-error: var(--color-tart-orange);
   --color-primary: var(--color-azure);
 
+  &:not([data-theme]) {
+    @media (prefers-color-scheme: dark) {
+      --color-sheet: var(--color-dark-gunmetal);
+      --color-text: #fff;
+    }
+  }
+
+  /* Light Mode */
+  &[data-theme="light"] {
+    --color-sheet: var(--color-ghost-white);
+    --color-text: var(--color-charleston-green);
+  }
+
   /* Dark Mode */
-  @media (prefers-color-scheme: dark) {
+  &[data-theme="dark"] {
     --color-sheet: var(--color-dark-gunmetal);
     --color-text: #fff;
   }
+
 
   /* Typography */
   --font-mono: 'Space Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;

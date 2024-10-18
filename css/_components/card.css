@@ -3,11 +3,21 @@
   background-color: var(--color-white);
   padding: var(--fluid-32-40) var(--fluid-24-40);
 
-  @media (prefers-color-scheme: light) {
+  @nest html:not([data-theme]) & {
+    @media (prefers-color-scheme: light) {
+      box-shadow: var(--card-shadow);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-yankees-blue);
+    }
+  }
+
+  @nest [data-theme="light"] & {
     box-shadow: var(--card-shadow);
   }
 
-  @media (prefers-color-scheme: dark) {
+  @nest [data-theme="dark"] & {
     background-color: var(--color-yankees-blue);
   }
 }
@@ -69,7 +79,13 @@
     line-height: 25px;
     margin-block: var(--fluid-33-24) var(--fluid-22-32);
 
-    @media (prefers-color-scheme: light) {
+    @nest html:not([data-theme]) & {
+      @media (prefers-color-scheme: light) {
+        color: var(--color-queen-blue);
+      }
+    }
+
+    @nest [data-theme="light"] & {
       color: var(--color-queen-blue);
     }
   }

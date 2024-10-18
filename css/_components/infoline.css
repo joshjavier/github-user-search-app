@@ -13,7 +13,13 @@
     &:hover { text-decoration: underline; }
   }
 
-  @media (prefers-color-scheme: light) {
+  @nest html:not([data-theme]) & {
+    @media (prefers-color-scheme: light) {
+      color: var(--color-queen-blue);
+    }
+  }
+
+  @nest [data-theme="light"] & {
     color: var(--color-queen-blue);
   }
 }

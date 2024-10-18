@@ -7,6 +7,7 @@
   <meta name="description" content="Search for GitHub users with a simple UI. A Frontend Mentor project built by Josh Javier.">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="/style.css">
+  <script src="/theme-toggle.js"></script>
 </head>
 <body>
   <%- include('partials/icons.ejs') %>
@@ -16,9 +17,11 @@
       <div class="app-header">
         <h1 class="logo"><a href="/">devfinder</a></h1>
 
-        <button class="theme-toggle">
-          Dark
-          <svg class="icon" aria-hidden="true"><use href="#icon-moon" /></svg>
+        <button id="theme-toggle" class="theme-toggle" aria-live="polite">
+          <span class="visually-hidden">switch to</span>
+          <span id="theme-value">light</span>
+          <span class="visually-hidden">theme</span>
+          <svg id="theme-icon" class="icon" aria-hidden="true"><use href="#icon-moon" /></svg>
         </button>
       </div>
 

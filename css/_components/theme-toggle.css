@@ -13,12 +13,16 @@
     --color-text: var(--color-charleston-green);
   }
 
-  @media (prefers-color-scheme: dark) {
-    --color-text: #fff;
-
-    &:hover {
-      --color-text: #90A4D4;
+  @nest html:not([data-theme]) & {
+    @media (prefers-color-scheme: dark) {
+      --color-text: #fff;
+      &:hover { --color-text: #90A4D4; }
     }
+  }
+
+  @nest [data-theme="dark"] & {
+    --color-text: #fff;
+    &:hover { --color-text: #90A4D4; }
   }
 
   & .icon {

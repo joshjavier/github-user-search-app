@@ -2,6 +2,11 @@
 @import 'root.css';
 @import 'fonts.css';
 
+* {
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
 body {
   margin: 0;
   font-family: var(--font-mono);
@@ -16,6 +21,10 @@ body {
 
 main {
   width: 100%;
+}
+
+a, button {
+  touch-action: manipulation;
 }
 
 button {
