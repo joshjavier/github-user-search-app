@@ -14,3 +14,58 @@ Single-colored icons can be modified like so:
   color: red;
 }
 ========================================== */
+
+.icon-sun-and-moon {
+  & * {
+    transition-property: transform, opacity;
+    transition-duration: .5s;
+  }
+
+  & :where(.beams, .sun) {
+    transform-origin: center;
+  }
+
+  & .moon > path {
+    transform: translate(7px, -7px);
+  }
+
+  @nest .theme-toggle:hover & {
+    & .beams {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  @nest html:not([data-theme]) & {
+    @media (prefers-color-scheme: dark) {
+      & .sun {
+        transform: scale(199%);
+      }
+
+      & .beams {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+
+      & .moon > path {
+        transform: translate(0);
+        transition-delay: .3s;
+      }
+    }
+  }
+
+  @nest [data-theme="dark"] & {
+    & .sun {
+      transform: scale(199%);
+    }
+
+    & .beams {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+
+    & .moon > path {
+      transform: translate(0);
+      transition-delay: .3s;
+    }
+  }
+}
