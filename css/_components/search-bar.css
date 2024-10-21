@@ -23,10 +23,11 @@
     height: 100%;
     border-radius: 15px;
     border: none;
-    padding-inline: 80px 140px;
+    padding-inline: var(--fluid-45-80) var(--fluid-118-140);
     background-color: var(--color-sheet);
     color: var(--color-text);
     --color-sheet: var(--color-white);
+    font-size: inherit;
 
     &::placeholder {
       color: var(--color-queen-blue);
