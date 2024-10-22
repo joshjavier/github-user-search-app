@@ -46,7 +46,7 @@ Users should be able to:
 
 ### Links
 
-- Frontend Mentor Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Frontend Mentor Solution URL: https://www.frontendmentor.io/solutions/github-user-search-app-using-expressjs-and-axios-feat-lightning-css-5HNSFQwoW_
 - Live Site URL: https://devfinder.fly.dev
 
 ## My process
